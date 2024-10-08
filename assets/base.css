@@ -3598,9 +3598,7 @@ details-disclosure > details {
 
 /*---------------------------------------------------------------THEME CUSTOM----------------------------------------------------------*/
 
-:root {
-  --a-padding: 0vw 10vw;
-}
+/*-----------------------------------HEADER SECTION*/
 
 .A-Header {
   background-color: #000000;
@@ -3627,12 +3625,33 @@ details-disclosure > details {
   width: 100%;
   justify-content: space-between;
 }
+
+/*-----------------------------------PARAGRAPH SECTION*/
+
+.A-Paragraph {
+  background-color: #000;
+  padding: 12vw 10vw;
+}
+.a-paragraph-title {
+  color: #ffffff;
+  font-family: Helvetica, sans-serif;
+  font-size: 1.8vw;
+  padding: 6vw 0vw;
+}
+.a-paragraph-content {
+  color: #ffffff;
+  margin: 0;
+  font-size: 3vw;
+  padding: 0vw 0vw 6vw 0vw;
+}
+
+/*-----------------------------------ALL SECTION*/
+
 .a-inline {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-
 .a-header-h1 {
   font-family: var(--type-body-font);
   font-size: 15vw;
@@ -3665,6 +3684,16 @@ details-disclosure > details {
   font-family: Helvetica, sans-serif;
   font-style: normal;
 }
+.a-line-3px {
+  border: none; /* Supprime la bordure par défaut */
+  height: 3px; /* Définit l'épaisseur de la ligne */
+  background-color: #ffffff; /* Couleur de la ligne */
+  width: 100%;
+  display: block !important;
+}
+
+/*-----------------------------------SVG STYLES*/
+
 .a-svg-cloud1 {
   margin-right: 10vw;
 }

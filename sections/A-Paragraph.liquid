@@ -1,0 +1,38 @@
+{% render 'A-svg' %}
+
+<div class="A-Paragraph">
+  <div class="a-line-3px"></div>
+  <div class="a-inline">
+    <div class="a-paragraph-title">{{ section.settings['paragraph-title'] }}</div>
+    <svg class="a-responsive-svg a-svg-cloud2">
+      <use xlink:href="#a-svg-cloud2"></use>
+    </svg>
+  </div>
+  <div class="a-paragraph-content">{{ section.settings['paragraph-content'] }}</div>
+  <div class="a-line-3px"></div>
+</div>
+
+{% schema %}
+{
+  "name": "A-Paragraph",
+  "settings": [
+    {
+      "type": "text",
+      "id": "paragraph-title",
+      "label": "Paragraph Title",
+      "default": "Pourquoi Ploceus"
+    },
+    {
+      "type": "text",
+      "id": "paragraph-content",
+      "label": "Paragraph Content",
+      "default": "Avec un suivi personnalisé grâce à une proximité avec vous tout au long du projet nous créons ensemble des boutiques qui vous ressemblent, performent et réalisent vos rêves les plus fous."
+    }
+  ],
+  "presets": [
+    {
+      "name": "A-Paragraph"
+    }
+  ]
+}
+{% endschema %}

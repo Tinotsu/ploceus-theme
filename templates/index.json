@@ -3,6 +3,9 @@
     "A-Header": {
       "type": "A-Header",
     },
+    "A-Paragraph": {
+      "type": "A-Paragraph",
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -204,6 +207,7 @@
   },
   "order": [
     "A-Header",
+    "A-Paragraph",
     "image_banner",
     "rich_text",
     "featured_collection",
