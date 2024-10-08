@@ -6,6 +6,9 @@
     "A-Paragraph": {
       "type": "A-Paragraph",
     },
+    "A-Projects": {
+      "type": "A-Projects",
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -208,6 +211,7 @@
   "order": [
     "A-Header",
     "A-Paragraph",
+    "A-Projects",
     "image_banner",
     "rich_text",
     "featured_collection",

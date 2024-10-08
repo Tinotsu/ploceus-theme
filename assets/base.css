@@ -3632,17 +3632,44 @@ details-disclosure > details {
   background-color: #000;
   padding: 12vw 10vw;
 }
-.a-paragraph-title {
+.a-h3 {
   color: #ffffff;
   font-family: Helvetica, sans-serif;
   font-size: 1.8vw;
   padding: 6vw 0vw;
+  margin: 0vw;
 }
 .a-paragraph-content {
   color: #ffffff;
   margin: 0;
   font-size: 3vw;
   padding: 0vw 0vw 6vw 0vw;
+}
+
+/*---------------------------------PROJECTS SECTION*/
+
+.A-Projects {
+  background-color: #000;
+  padding: 12vw 10vw;
+}
+.a-carousel-container {
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+}
+.a-carousel {
+  display: flex;
+}
+.slide {
+  width: 15vw;
+  height: 75vh;
+  background-position: center;
+  background-color: #fff;
+  background-size: 75vh;
+  margin: 1vw;
+  border-radius: 3vw;
+  display: inline-block;
+  cursor: pointer;
 }
 
 /*-----------------------------------ALL SECTION*/
@@ -3652,9 +3679,14 @@ details-disclosure > details {
   flex-direction: row;
   align-items: center;
 }
-.a-header-h1 {
+.a-h1 {
   font-family: var(--type-body-font);
   font-size: 15vw;
+  color: #ffffff;
+  margin: 0;
+}
+.a-h2 {
+  font-size: 12vw;
   color: #ffffff;
   margin: 0;
 }
