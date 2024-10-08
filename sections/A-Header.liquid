@@ -1,0 +1,37 @@
+{% render 'A-svg' %}
+
+<div class="A-Header">
+  <div>
+    <div class="a-header-line">
+      <h1 class="a-header-h1">Agence</h1>
+      <svg class="a-responsive-svg">
+        <use xlink:href="#a-svg-cloud2"></use>
+      </svg>
+    </div>
+    <div class="a-header-line">
+      <svg class="a-responsive-svg">
+        <use xlink:href="#a-svg-cloud1"></use>
+      </svg>
+      <h1 class="a-header-h1">Shopify</h1>
+    </div>
+  </div>
+  <div class="a-div-svg-shop">
+    <svg class="a-responsive-svg">
+      <use xlink:href="#a-svg-shop"></use>
+    </svg>
+  </div>
+  <div class="a-header-bottom">
+    <svg class="a-responsive-svg">
+      <use xlink:href="#a-svg-left-angle"></use>
+    </svg>
+    <p class="a-p">Ploceus - Faites construire la boutique de vos rêves</p>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "A-Header",
+  "settings": [],
+  "presets": [{ "name": "A-Header" }]
+}
+{% endschema %}

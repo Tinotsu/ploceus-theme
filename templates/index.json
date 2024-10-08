@@ -1,5 +1,8 @@
 {
   "sections": {
+    "A-Header": {
+      "type": "A-Header",
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -200,6 +203,7 @@
     }
   },
   "order": [
+    "A-Header",
     "image_banner",
     "rich_text",
     "featured_collection",

@@ -5,7 +5,8 @@
   --alpha-badge-border: 0.1;
   --focused-base-outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
   --focused-base-outline-offset: 0.3rem;
-  --focused-base-box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
+  --focused-base-box-shadow: 0 0 0 0.3rem rgb(var(--color-background)),
+    0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
 }
 
 .product-card-wrapper .card,
@@ -1320,15 +1321,14 @@ button.shopify-payment-button__button--unbranded {
 
 shopify-accelerated-checkout {
   --shopify-accelerated-checkout-button-border-radius: var(--buttons-radius-outset);
-  --shopify-accelerated-checkout-button-box-shadow: var(--shadow-horizontal-offset) var(--shadow-vertical-offset) var(--shadow-blur-radius)
-  rgba(var(--color-shadow), var(--shadow-opacity));
+  --shopify-accelerated-checkout-button-box-shadow: var(--shadow-horizontal-offset) var(--shadow-vertical-offset)
+    var(--shadow-blur-radius) rgba(var(--color-shadow), var(--shadow-opacity));
 }
 shopify-accelerated-checkout-cart {
   --shopify-accelerated-checkout-button-border-radius: var(--buttons-radius-outset);
-  --shopify-accelerated-checkout-button-box-shadow: var(--shadow-horizontal-offset) var(--shadow-vertical-offset) var(--shadow-blur-radius)
-  rgba(var(--color-shadow), var(--shadow-opacity));
+  --shopify-accelerated-checkout-button-box-shadow: var(--shadow-horizontal-offset) var(--shadow-vertical-offset)
+    var(--shadow-blur-radius) rgba(var(--color-shadow), var(--shadow-opacity));
 }
-
 
 /* Button - other */
 
@@ -3594,4 +3594,59 @@ details-disclosure > details {
   100% {
     transform: translateX(100%) scaleX(0);
   }
+}
+
+/*---------------------------------------------------------------THEME CUSTOM----------------------------------------------------------*/
+
+:root {
+  --a-padding: 0vw 10vw;
+}
+
+.A-Header {
+  background-color: #000000;
+  padding: var(--a-padding);
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.a-header-line {
+  display: flex;
+  width: 100%;
+  height: 20vw;
+  justify-content: space-between;
+  align-items: center;
+}
+.a-header-bottom {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+}
+
+.a-header-h1 {
+  font-family: var(--type-body-font);
+  font-size: 15vw;
+  color: #ffffff;
+  margin: 0;
+}
+.a-responsive-svg {
+  display: flex;
+  justify-content: flex-start;
+  width: 15vw;
+  fill: #ffffff;
+  object-fit: contain;
+}
+.a-header-svg {
+  width: 100%;
+  justify-content: flex-end;
+  margin-right: 10%;
+}
+.a-p {
+  color: #ffffff;
+  margin: 0;
+}
+.a-div-svg-shop {
+  margin-left: auto;
+  margin-right: 10%;
 }
