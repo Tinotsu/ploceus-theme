@@ -13,40 +13,66 @@
   </div>
   <div class="a-carousel-container">
     <div class="a-carousel">
-      <!-- Slide 1 -->
-      <div class="slide" onclick="expand(this, 0)">slide 1</div>
-      <!-- Slide 2 -->
-      <div class="slide" onclick="expand(this, 1)">slide 2</div>
-      <!-- Slide 3 -->
-      <div class="slide" onclick="expand(this, 2)">slide 3</div>
+      {% for block in section.blocks %}
+        <div class="slide" onclick="expand(this)">slide</div>
+      {% endfor %}
     </div>
   </div>
 </div>
 <script>
-  const slides = document.querySelectorAll('.slide');
+  document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.slide');
 
-  const expand = (slide, i) => {
-    slides.forEach((it, ind) => {
-      if (i === ind) return;
-      it.clicked = false;
-    });
-    gsap.to(slides, {
-      width: slide.clicked ? '15vw' : '8vw',
-      duration: 1,
-    });
+    const expand = (slide, i) => {
+      // Réduire toutes les autres slides
+      slides.forEach((it, ind) => {
+        if (i !== ind) {
+          gsap.to(it, {
+            width: '8vw',
+            duration: 1,
+          });
+        }
+      });
 
-    slide.clicked = !slide.clicked;
-    gsap.to(slide, {
-      width: slide.clicked ? '42vw' : '15vw',
-      duration: 1,
-    });
-  };
+      gsap.to(slide, {
+        width: '42vw',
+        duration: 1,
+      });
+    };
 
-  slides.forEach((slide, i) => {
-    slide.clicked = false;
-    slide.addEventListener('click', () => expand(slide, i));
+    slides.forEach((slide, i) => {
+      slide.addEventListener('click', () => expand(slide, i));
+    });
   });
 </script>
+
 {% schema %}
-{ "name": "A-Projects", "settings": [], "presets": [{ "name": "A-Projects" }] }
+{
+  "name": "A-Projects",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "text",
+          "id": "slide_text",
+          "label": "Slide Text",
+          "default": "slide 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "slide_image",
+          "label": "Slide Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "A-Projects"
+    }
+  ]
+}
 {% endschema %}
