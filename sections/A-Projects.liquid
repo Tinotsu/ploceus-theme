@@ -14,7 +14,14 @@
   <div class="a-carousel-container">
     <div class="a-carousel">
       {% for block in section.blocks %}
-        <div class="slide" onclick="expand(this)">slide</div>
+        <div
+          class="slide"
+          onclick="expand(this)"
+          style="background'image: url"
+          ({{ block.settings.slide_image }});
+        >
+          slide
+        </div>
       {% endfor %}
     </div>
   </div>
