@@ -5,16 +5,6 @@
       Voyez par vous-même ce dont nous sommes capables et imaginez vous à leur place
     </h4>
   </div>
-  <div class="a-inline">
-    <div class="a-incolumn" style="margin-right: 5vw;">
-      <h3 class="a-h4">Tutoriels vidéos personnalisés</h3>
-      <h3 class="a-h4">Thème qui leur ressemble</h3>
-    </div>
-    <div class="a-incolumn">
-      <h3 class="a-h4">Outils intégrés et paramétrés</h3>
-      <h3 class="a-h4">Satisfactions GARANTIE</h3>
-    </div>
-  </div>
   <div class="a-carousel-container">
     <div class="a-carousel">
       {% for block in section.blocks %}
@@ -33,19 +23,28 @@
   document.addEventListener('DOMContentLoaded', () => {
     const slides = document.querySelectorAll('.slide');
 
+    // Agrandir la première slide par défaut
+    const firstSlide = slides[0];
+    if (firstSlide) {
+      gsap.to(firstSlide, {
+        width: '70vw',
+        duration: 1,
+      });
+    }
+
     const expand = (slide, i) => {
       // Réduire toutes les autres slides
       slides.forEach((it, ind) => {
         if (i !== ind) {
           gsap.to(it, {
-            width: '8vw',
+            width: '16vw',
             duration: 1,
           });
         }
       });
 
       gsap.to(slide, {
-        width: '42vw',
+        width: '70vw',
         duration: 1,
       });
     };

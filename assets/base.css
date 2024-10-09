@@ -3659,11 +3659,10 @@ details-disclosure > details {
 }
 .a-carousel {
   display: flex;
-  justify-content: center;
 }
 .slide {
-  width: 8vw;
-  height: 75vh;
+  width: 16vw;
+  height: 90vh;
   background-position: center;
   background-color: #fff;
   background-size: 75vh;
