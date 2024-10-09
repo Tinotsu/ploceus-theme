@@ -8,6 +8,25 @@
     },
     "A-Projects": {
       "type": "A-Projects",
+      "blocks": {
+        "slide1" :{
+          "type": "slide",
+          "settings": {
+            "text": "hey oh",
+          }
+        },
+        "slide2" :{
+          "type": "slide",
+          "settings": {
+            "text": "hey oh",
+          }
+        },
+      },
+      "block_order": [
+        "slide1",
+        "slide2"
+      ]
+
     },
     "image_banner": {
       "type": "image-banner",

@@ -17,10 +17,9 @@
         <div
           class="slide"
           onclick="expand(this)"
-          style="background'image: url"
-          ({{ block.settings.slide_image }});
+          style="background-image: url({{ block.settings.slide_image | img_url: '2048x2048' }}); background-size: cover;"
         >
-          slide
+          {{ block.settings.slide_text }}
         </div>
       {% endfor %}
     </div>

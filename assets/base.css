@@ -3667,7 +3667,7 @@ details-disclosure > details {
   background-color: #fff;
   background-size: 75vh;
   margin: 1vw;
-  border-radius: 3vw;
+  border-radius: 1.5vw;
   display: inline-block;
   cursor: pointer;
 }
