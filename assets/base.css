@@ -3685,7 +3685,7 @@ details-disclosure > details {
 }
 .a-notice-card {
   display: flex;
-  height: 300vh;
+  height: 100vh;
   justify-content: space-around;
   align-items: center;
   background-color: #070707;
