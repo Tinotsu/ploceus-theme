@@ -14,48 +14,54 @@
     <div class="a-container-slidecard">
       <div class="a-slidecard a-slidecard-1">card 1</div>
       <div class="a-slidecard a-slidecard-2">card 2</div>
+      <div class="a-slidecard a-slidecard-3">card 3</div>
     </div>
   </div>
 </div>
 
 <script>
-  // Enregistrer le plugin ScrollTrigger de GSAP
-  gsap.registerPlugin(ScrollTrigger);
+  document.addEventListener('DOMContentLoaded', function () {
+    // Enregistrer le plugin ScrollTrigger de GSAP
+    gsap.registerPlugin(ScrollTrigger);
 
-  // Définir le zIndex de chaque élément avec la classe '.a-slidecard'
-  gsap.set('.a-slidecard', {
-    zIndex: (i, target, targets) => targets.length - i,
-  });
-
-  // Créer un tableau des éléments '.a-slidecard', excluant ceux avec la classe '.a-slidecard-3'
-  var images = gsap.utils.toArray('.a-slidecard:not(.a-slidecard-3)');
-
-  // Parcourir chaque image et créer une timeline pour l'animer
-  images.forEach((image, i) => {
-    var tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.a-notice-card', // Correction du sélecteur
-        start: () => 'top -' + window.innerHeight * (i + 0.5) + 'px', // Correction de la syntaxe
-        end: () => '+=' + window.innerHeight + 'px', // Correction de la syntaxe
-        scrub: true,
-        toggleActions: 'play none reverse none',
-        invalidateOnRefresh: true,
-      },
+    // Définir le zIndex de chaque élément avec la classe '.a-slidecard'
+    gsap.set('.a-slidecard', {
+      zIndex: (i, target, targets) => targets.length - i,
     });
 
-    // Animer la hauteur de l'image pour la réduire à 0
-    tl.to(image, { height: 0 });
-  });
+    // Créer un tableau des éléments '.a-slidecard', excluant ceux avec la classe '.a-slidecard-3'
+    var images = gsap.utils.toArray('.a-slidecard:not(.a-slidecard-3)');
 
-  // ScrollTrigger pour épingler '.a-notice-card'
-  ScrollTrigger.create({
-    trigger: '.a-notice-card', // Correction du sélecteur
-    scrub: true,
-    markers: true, // Afficher des marqueurs (à désactiver en production)
-    pin: true, // Epingler l'élément pendant l'animation
-    start: 'top top', // Correction de la syntaxe, pas besoin de fonction ici
-    end: () => '+=' + (images.length + 1) * window.innerHeight + 'px', // Correction de la syntaxe
-    invalidateOnRefresh: true,
+    // Parcourir chaque image et créer une timeline pour l'animer
+    images.forEach((image, i) => {
+      var tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.a-notice-card',
+          start: () => 'top -' + window.innerHeight * (i + 0.5) + 'px',
+          end: () => '+=' + window.innerHeight + 'px',
+          scrub: true,
+          markers: true, // Afficher des marqueurs (à désactiver en production)
+          toggleActions: 'play none reverse none',
+          invalidateOnRefresh: true,
+        },
+      });
+
+      // Animer la hauteur de l'image pour la réduire à 0
+      tl.to(image, { height: 0 });
+    });
+
+    // ScrollTrigger pour épingler '.a-notice-card'
+    ScrollTrigger.create({
+      trigger: '.a-notice-card',
+      scrub: true,
+      pin: true,
+      start: 'top top',
+      end: () => '+=' + (images.length + 1) * window.innerHeight + 'px',
+      invalidateOnRefresh: true,
+      onEnter: () => {
+        gsap.set('.a-notice-card', { zIndex: 9999 });
+      },
+    });
   });
 </script>
 
