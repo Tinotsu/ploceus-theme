@@ -27,6 +27,9 @@
         "slide2"
       ]
     },
+    "A-Notice": {
+      "type": "A-Notice",
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -230,6 +233,7 @@
     "A-Header",
     "A-Paragraph",
     "A-Projects",
+    "A-Notice",
     "image_banner",
     "rich_text",
     "featured_collection",
