@@ -13,7 +13,12 @@
   <div class="a-notice-card">
     <div class="a-notice-card-left">
       {% for block in section.blocks %}
-        <div class="a-slidecard">card {{ forloop.index }}</div>
+        <div
+          class="a-slidecard"
+          data-image-url="{{ block.settings.slide_image | img_url: '2048x2048' }}); background-size: cover;"
+        >
+          card {{ forloop.index }}
+        </div>
       {% endfor %}
     </div>
     <div
@@ -30,6 +35,7 @@
     // Enregistrer le plugin ScrollTrigger de GSAP
     gsap.registerPlugin(ScrollTrigger);
     const slides = document.querySelectorAll('.a-slidecard');
+    const logoContainer = document.querySelector('.a-slidecard-logo');
 
     slides.forEach((slide) => {
       ScrollTrigger.create({
@@ -54,25 +60,17 @@
       });
     });
 
-    const logo = document.querySelector('.a-slidecard-logo');
-
-    const colors = ['#FF5733', '#33FF57', '#3357FF'];
-
     slides.forEach((slide, index) => {
+      const imageUrl = slide.getAttribute('data-image-url');
+
       ScrollTrigger.create({
         trigger: slide,
-        start: 'top 10%',
+        start: 'top center',
         onEnter: () => {
-          logo.style.backgroundColor = colors[index % colors.length];
+          logoContainer.style.backgroundImage = `url(${imageUrl})`;
         },
         onEnterBack: () => {
-          logo.style.backgroundColor = colors[index % colors.length];
-        },
-        onLeave: () => {
-          logo.style.backgroundColor = colors[index % colors.length];
-        },
-        onLeaveBack: () => {
-          logo.style.backgroundColor = colors[index % colors.length];
+          logoContainer.style.backgroundImage = `url(${imageUrl})`;
         },
         markers: true,
       });
@@ -83,18 +81,18 @@
 {% schema %}
 {
   "name": "A-Notice",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "slidecard_logo",
-      "label": "Slidecard Logo"
-    }
-  ],
+  "settings": [{}],
   "blocks": [
     {
       "type": "slide",
       "name": "Slide notice",
-      "settings": [{}]
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo_image",
+          "label": "Slidecard Logo"
+        }
+      ]
     }
   ],
   "presets": [
