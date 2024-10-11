@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "A-Header": {
@@ -37,36 +37,41 @@
         "slide1",
         "slide2"
       ],
+      "settings": {
+      }
     },
     "A-Notice": {
       "type": "A-Notice",
       "blocks": {
         "slide1": {
           "type": "slide",
-          "settings":{}
+          "settings": {
+          }
         },
         "slide2": {
           "type": "slide",
-          "settings":{}
+          "settings": {
+          }
         },
         "slide3": {
           "type": "slide",
-          "settings":{}
+          "settings": {
+          }
         }
-      },
-      "settings": {
       },
       "block_order": [
         "slide1",
         "slide2",
         "slide3"
       ],
-    },
+      "settings": {
+      }
+    }
   },
   "order": [
     "A-Header",
     "A-Paragraph",
     "A-Projects",
-    "A-Notice",
+    "A-Notice"
   ]
 }
