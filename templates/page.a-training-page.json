@@ -15,6 +15,7 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
+<<<<<<< HEAD
     },
     "A-Training-page": {
       "type": "A-Training-page",
@@ -25,5 +26,11 @@
   "order": [
     "main",
     "A-Training-page"
+=======
+    }
+  },
+  "order": [
+    "main"
+>>>>>>> 5334f2623acf5af8ca7ddda55a3f890ea4bbefe0
   ]
 }

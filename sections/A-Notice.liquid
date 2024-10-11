@@ -11,9 +11,23 @@
     et qui vous donne envie de nous donner de vos nouvelles, même après la fin de nos échanges.
   </h4>
   <div class="a-notice-card">
-    <div class="a-slidecard a-slidecard-1">card 1</div>
-    <div class="a-slidecard a-slidecard-2">card 2</div>
-    <div class="a-slidecard a-slidecard-3">card 3</div>
+    {% for block in section.blocks %}
+      {% if block.type == 'slide' %}
+        <div class="a-slidecard-container">
+          <div class="a-slidecard">card 1</div>
+          <div
+            class="a-slidecard-logo"
+            {% if block.settings.slidecard_logo %}
+              style="background-image: url({{ block.settings.slidecard_logo | img_url: '1024x1024' }}); background-size: cover;"
+            {% else %}
+              style="background-image: url(https://cdn.shopify.com/s/files/1/0866/8695/7912/files/png-clipart-tesla-logo-transport-cars-thumbnail.png?v=1728655918); background-size: cover;"
+            {% endif %}
+          >
+            logo
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
   </div>
 </div>
 
@@ -21,32 +35,17 @@
   document.addEventListener('DOMContentLoaded', function () {
     // Enregistrer le plugin ScrollTrigger de GSAP
     gsap.registerPlugin(ScrollTrigger);
+    const slides = document.querySelectorAll('.a-slidecard-container');
 
-    ScrollTrigger.create({
-      trigger: '.a-slidecard-1',
-      start: 'top 10%',
-      endTrigger: '.a-notice-card',
-      end: 'bottom 90%',
-      markers: true,
-      pin: true,
-    });
-
-    ScrollTrigger.create({
-      trigger: '.a-slidecard-2',
-      start: 'top 10%',
-      endTrigger: '.a-notice-card',
-      end: 'bottom 90%',
-      markers: true,
-      pin: true,
-    });
-
-    ScrollTrigger.create({
-      trigger: '.a-slidecard-3',
-      start: 'top 10%',
-      endTrigger: '.a-notice-card',
-      end: 'bottom 90%',
-      markers: true,
-      pin: true,
+    slides.forEach((slide) => {
+      ScrollTrigger.create({
+        trigger: slide,
+        start: 'top 10%',
+        endTrigger: '.a-notice-card',
+        end: 'bottom 90%',
+        markers: true,
+        pin: true,
+      });
     });
   });
 </script>
@@ -55,6 +54,19 @@
 {
   "name": "A-Notice",
   "settings": [],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide notice",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "slidecard_logo",
+          "label": "Slidecard Logo"
+        }
+      ]
+    }
+  ],
   "presets": [{ "name": "A-Notice" }]
 }
 {% endschema %}

@@ -3685,10 +3685,12 @@ details-disclosure > details {
 }
 .a-notice-card {
   display: flex;
-  height: 300vh;
-  align-items: top;
   flex-direction: column;
   background-color: #070707;
+  margin: 20vw 0vw;
+  width: 100%;
+  gap: 50vh;
+  padding-bottom: 50vh;
 }
 .a-slidecard {
   position: relative;
@@ -3697,21 +3699,23 @@ details-disclosure > details {
   width: 60vw;
   height: 80vh;
   border-radius: 1.5vw;
-  border: 2px solid rgb(255, 38, 0);
+  border: 2px solid #f00;
   padding: 10px;
-  margin-bottom: 20vh;
 }
-.a-slidecard-1 {
-  z-index: 1;
-  background-color: #0ff;
+.a-slidecard-container {
+  display: flex;
+  flex-direction: row;
+  height: 80vh;
+  width: 100%;
+  justify-content: space-between;
+  z-index: auto;
 }
-.a-slidecard-2 {
-  z-index: 2;
-  background-color: #ff0;
-}
-.a-slidecard-3 {
-  z-index: 3;
-  background-color: #f00;
+.a-slidecard-logo {
+  height: 15vw;
+  width: 15vw;
+  border: 2px solid #f00;
+  border-radius: 100%;
+  overflow: hidden;
 }
 
 /*-----------------------------------ALL SECTION*/
