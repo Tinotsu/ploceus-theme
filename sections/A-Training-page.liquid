@@ -1,0 +1,64 @@
+<h1 class="t-h1">HELLO_MARS</h1>
+
+<div class="t-div1">t-div1</div>
+<div class="t-square1">t-div3</div>
+<div class="t-div2">some text</div>
+
+{% stylesheet %}
+  .t-h1 {
+    font-size: 3em;
+    text-align: center;
+  }
+
+  .t-div1,
+  .t-div2 {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .t-div1 {
+    background-color: pink;
+  }
+  .t-div2 {
+    background-color: salmon;
+  }
+  .t-square1 {
+    width: 150px;
+    height: 150px;
+    background-color: lightblue;
+  }
+  .t-square2 {
+    width: 150px;
+    height: 20vh;
+    background-color: green;
+  }
+  .t-panel {
+    height: 100vh;
+    background-color: orange;
+  }
+  .red {
+    background-color: red;
+  }
+{% endstylesheet %}
+
+{% javascript %}
+  document.addEventListener('DOMContentLoaded', (event) => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const tl = gsap.timeline();
+
+    tl.to('.t-square1', { x: 500, duration: 5 })
+      .to('.t-square1', { y: 500, duration: 5 })
+      .to('.t-square1', { rotate: 90, duration: 2, ease: 'elastic' });
+    tl.addLabel('rotate', 8);
+    tl.play('rotate');
+  });
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "A-Training-page",
+  "settings": [],
+  "presets": [{ "name": "A-Training-page" }]
+}
+{% endschema %}

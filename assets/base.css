@@ -3685,37 +3685,32 @@ details-disclosure > details {
 }
 .a-notice-card {
   display: flex;
-  height: 100vh;
-  justify-content: space-around;
-  align-items: center;
+  height: 300vh;
+  align-items: top;
+  flex-direction: column;
   background-color: #070707;
 }
-.a-container-slidecard {
-  position: relative;
-  overflow: hidden;
-  width: 40vw;
-  height: 80vh;
-}
 .a-slidecard {
-  position: absolute;
+  position: relative;
   inset: 0%;
   z-index: 1;
-  width: 100%;
+  width: 60vw;
   height: 80vh;
   border-radius: 1.5vw;
   border: 2px solid rgb(255, 38, 0);
   padding: 10px;
+  margin-bottom: 20vh;
 }
 .a-slidecard-1 {
-  z-index: auto;
+  z-index: 1;
   background-color: #0ff;
 }
 .a-slidecard-2 {
-  z-index: auto;
+  z-index: 2;
   background-color: #ff0;
 }
 .a-slidecard-3 {
-  z-index: auto;
+  z-index: 3;
   background-color: #f00;
 }
 

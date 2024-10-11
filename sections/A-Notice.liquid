@@ -11,11 +11,9 @@
     et qui vous donne envie de nous donner de vos nouvelles, même après la fin de nos échanges.
   </h4>
   <div class="a-notice-card">
-    <div class="a-container-slidecard">
-      <div class="a-slidecard a-slidecard-1">card 1</div>
-      <div class="a-slidecard a-slidecard-2">card 2</div>
-      <div class="a-slidecard a-slidecard-3">card 3</div>
-    </div>
+    <div class="a-slidecard a-slidecard-1">card 1</div>
+    <div class="a-slidecard a-slidecard-2">card 2</div>
+    <div class="a-slidecard a-slidecard-3">card 3</div>
   </div>
 </div>
 
@@ -24,7 +22,31 @@
     // Enregistrer le plugin ScrollTrigger de GSAP
     gsap.registerPlugin(ScrollTrigger);
 
+    ScrollTrigger.create({
+      trigger: '.a-slidecard-1',
+      start: 'top 10%',
+      endTrigger: '.a-notice-card',
+      end: 'bottom 90%',
+      markers: true,
+      pin: true,
+    });
 
+    ScrollTrigger.create({
+      trigger: '.a-slidecard-2',
+      start: 'top 10%',
+      endTrigger: '.a-notice-card',
+      end: 'bottom 90%',
+      markers: true,
+      pin: true,
+    });
+
+    ScrollTrigger.create({
+      trigger: '.a-slidecard-3',
+      start: 'top 10%',
+      endTrigger: '.a-notice-card',
+      end: 'bottom 90%',
+      markers: true,
+      pin: true,
     });
   });
 </script>
