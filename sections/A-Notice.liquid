@@ -11,23 +11,17 @@
     et qui vous donne envie de nous donner de vos nouvelles, même après la fin de nos échanges.
   </h4>
   <div class="a-notice-card">
-    {% for block in section.blocks %}
-      {% if block.type == 'slide' %}
-        <div class="a-slidecard-container">
-          <div class="a-slidecard">card 1</div>
-          <div
-            class="a-slidecard-logo"
-            {% if block.settings.slidecard_logo %}
-              style="background-image: url({{ block.settings.slidecard_logo | img_url: '1024x1024' }}); background-size: cover;"
-            {% else %}
-              style="background-image: url(https://cdn.shopify.com/s/files/1/0866/8695/7912/files/png-clipart-tesla-logo-transport-cars-thumbnail.png?v=1728655918); background-size: cover;"
-            {% endif %}
-          >
-            logo
-          </div>
-        </div>
-      {% endif %}
-    {% endfor %}
+    <div class="a-notice-card-left">
+      {% for block in section.blocks %}
+        <div class="a-slidecard">card {{ forloop.index }}</div>
+      {% endfor %}
+    </div>
+    <div
+      class="a-slidecard-logo"
+      style="background-color:blue"
+    >
+      logo
+    </div>
   </div>
 </div>
 
@@ -35,7 +29,7 @@
   document.addEventListener('DOMContentLoaded', function () {
     // Enregistrer le plugin ScrollTrigger de GSAP
     gsap.registerPlugin(ScrollTrigger);
-    const slides = document.querySelectorAll('.a-slidecard-container');
+    const slides = document.querySelectorAll('.a-slidecard');
 
     slides.forEach((slide) => {
       ScrollTrigger.create({
@@ -47,26 +41,66 @@
         pin: true,
       });
     });
+
+    const logos = document.querySelectorAll('.a-slidecard-logo');
+    logos.forEach((logo) => {
+      ScrollTrigger.create({
+        trigger: logo,
+        start: 'top 10%',
+        endTrigger: '.a-notice-card',
+        end: 'bottom 90%',
+        markers: true,
+        pin: true,
+      });
+    });
+
+    const logo = document.querySelector('.a-slidecard-logo');
+
+    const colors = ['#FF5733', '#33FF57', '#3357FF'];
+
+    slides.forEach((slide, index) => {
+      ScrollTrigger.create({
+        trigger: slide,
+        start: 'top 10%',
+        onEnter: () => {
+          logo.style.backgroundColor = colors[index % colors.length];
+        },
+        onEnterBack: () => {
+          logo.style.backgroundColor = colors[index % colors.length];
+        },
+        onLeave: () => {
+          logo.style.backgroundColor = colors[index % colors.length];
+        },
+        onLeaveBack: () => {
+          logo.style.backgroundColor = colors[index % colors.length];
+        },
+        markers: true,
+      });
+    });
   });
 </script>
 
 {% schema %}
 {
   "name": "A-Notice",
-  "settings": [],
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "slidecard_logo",
+      "label": "Slidecard Logo"
+    }
+  ],
   "blocks": [
     {
       "type": "slide",
       "name": "Slide notice",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "slidecard_logo",
-          "label": "Slidecard Logo"
-        }
-      ]
+      "settings": [{}]
     }
   ],
-  "presets": [{ "name": "A-Notice" }]
+  "presets": [
+    {
+      "name": "A-Notice"
+    }
+  ]
 }
 {% endschema %}

@@ -3685,35 +3685,34 @@ details-disclosure > details {
 }
 .a-notice-card {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   background-color: #070707;
   margin: 20vw 0vw;
   width: 100%;
-  gap: 50vh;
   padding-bottom: 50vh;
+}
+.a-notice-card-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20vh;
 }
 .a-slidecard {
   position: relative;
   inset: 0%;
-  z-index: 1;
+  z-index: auto;
   width: 60vw;
   height: 80vh;
   border-radius: 1.5vw;
   border: 2px solid #f00;
   padding: 10px;
-}
-.a-slidecard-container {
-  display: flex;
-  flex-direction: row;
-  height: 80vh;
-  width: 100%;
-  justify-content: space-between;
-  z-index: auto;
+  color: aqua;
 }
 .a-slidecard-logo {
+  position: relative;
   height: 15vw;
   width: 15vw;
-  border: 2px solid #f00;
+  border: 2px solid #0f0;
   border-radius: 100%;
   overflow: hidden;
 }

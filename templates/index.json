@@ -25,17 +25,11 @@
         "slide1": {
           "type": "slide",
           "settings": {
-            "type": "image_picker",
-          "id": "slidecard_logo_1",
-          "label": "Slidecard Logo 1"
           }
         },
         "slide2": {
           "type": "slide",
           "settings": {
-            "type": "image_picker",
-            "id": "slidecard_logo_2",
-            "label": "Slidecard Logo 2"
           }
         }
       },
@@ -43,36 +37,30 @@
         "slide1",
         "slide2"
       ],
-      "settings": {
-      }
     },
     "A-Notice": {
       "type": "A-Notice",
       "blocks": {
-        "slide1":{
+        "slide1": {
           "type": "slide",
-          "settings":
-              {
-                "type": "image_picker",
-                "id": "slidecard_logo1",
-                "label": "Slidecard Logo 1"
-              },
+          "settings":{}
         },
-        "slide2":{
+        "slide2": {
           "type": "slide",
-          "settings": {
-            "type": "image_picker",
-            "id": "slidecard_logo",
-            "label": "Slidecard Logo 2",
-          },
+          "settings":{}
         },
+        "slide3": {
+          "type": "slide",
+          "settings":{}
+        }
+      },
+      "settings": {
       },
       "block_order": [
         "slide1",
         "slide2",
+        "slide3"
       ],
-      "settings": {
-      }
     },
   },
   "order": [
