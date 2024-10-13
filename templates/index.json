@@ -82,12 +82,19 @@
       ],
       "settings": {
       }
+    },
+    "A-Form": {
+      "type": "A-Form",
+      "settings": {
+      }
     }
   },
   "order": [
     "A-Header",
     "A-Paragraph",
     "A-Projects",
-    "A-Notice"
+    "A-Notice",
+    "A-Form"
+
   ]
 }
