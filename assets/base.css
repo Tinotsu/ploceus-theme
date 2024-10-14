@@ -3598,6 +3598,104 @@ details-disclosure > details {
 
 /*---------------------------------------------------------------THEME CUSTOM----------------------------------------------------------*/
 
+/*-----------------------------------ALL SECTION*/
+
+.a-inline {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+}
+.a-h1 {
+  font-family: var(--type-body-font);
+  font-size: 15vw;
+  color: #ffffff;
+  margin: 0;
+}
+.a-h2 {
+  font-size: 7vw;
+  color: #ffffff;
+  margin: 0;
+}
+.a-h3 {
+  color: #ffffff;
+  font-family: Helvetica, sans-serif;
+  font-size: 1.8vw;
+  padding: 6vw 0vw;
+  margin: 0vw;
+}
+.a-h4 {
+  font-size: 1.8vw;
+  color: #ffffff;
+  margin: 2vw 2vw 2vw 0vw;
+  font-family: var(--type-body-font);
+  text-align: right;
+}
+
+.a-responsive-svg {
+  display: flex;
+  fill: #ffffff;
+  width: 10vw;
+  height: 6vw;
+}
+.a-p {
+  color: #ffffff;
+  margin: 0;
+  font-size: 1.6vw;
+  font-family: Helvetica, sans-serif;
+}
+.a-a {
+  color: #ffffff;
+  margin: 0;
+  font-size: 2vw;
+  font-style: italic;
+  border: 2px solid #fff;
+  padding: 0px 12px;
+  border-radius: 90px;
+  white-space: nowrap;
+}
+.a-a-helvetica {
+  font-family: Helvetica, sans-serif;
+  font-style: normal;
+}
+.a-line-3px {
+  border: none; /* Supprime la bordure par défaut */
+  height: 3px; /* Définit l'épaisseur de la ligne */
+  background-color: #ffffff; /* Couleur de la ligne */
+  width: 100%;
+  display: block !important;
+}
+.a-right {
+  display: flex;
+  justify-content: right;
+  width: 100vw;
+}
+
+/*-----------------------------------SVG STYLES*/
+
+.a-svg-cloud1 {
+  margin-right: 10vw;
+}
+.a-svg-cloud2 {
+  margin-left: 15vw;
+}
+.a-div-svg-shop {
+  margin-left: auto;
+  margin-right: 10%;
+}
+.a-svg-left-angle {
+  width: 5vw;
+  height: 3vw;
+}
+.a-svg-arrow-from-line-right {
+  width: 5vw;
+  height: 4vw;
+}
+.a-svg-logo-ploceus {
+  width: 11vw;
+  height: 6vw;
+}
+
 /*-----------------------------------HEADER SECTION*/
 
 .A-Header {
@@ -3719,138 +3817,130 @@ details-disclosure > details {
 
 .A-Form {
   background-color: #000000;
-  padding: 10vw;
+  padding: 1vw;
   display: flex;
   flex-wrap: wrap;
 }
 .a-h2-formsection {
   font-family: var(--type-body-font);
   font-size: 6vw !important;
+  margin: 0vw 10vw;
 }
 .a-form-wrap {
-  margin: 10vw 0vw;
   display: flex;
   flex-wrap: wrap;
+  margin: 5vw 0vw;
 }
 .a-label-text {
   color: #fff;
-  font-size: 4vw;
+  font-size: 2vw;
   margin-bottom: 1vw;
   font-family: Helvetica, sans-serif;
 }
-.a-input-inline input[type='text'] {
-  margin-left: 1vw;
-  min-width: 5vw;
+.a-input-inline input[type='text'],
+.a-input-inline input[type='tel'],
+.a-input-inline input[type='email'] {
+  all: unset;
+  margin-left: 2vw;
+  width: 25vw;
   height: 3vw;
   background-color: #000;
-  border-bottom: 0.2vw solid #fff;
+  border-bottom: 0.1vw solid #fff;
   border-left: none;
   border-right: none;
   border-top: none;
   color: #fff;
-  font-size: 3vw;
-  font-family: var(--type-body-font) !important;
+  font-size: 2vw;
+  font-family: Georgia, 'Times New Roman', Times, serif !important;
+  font-style: italic;
+  text-align: center;
+  overflow: visible;
 }
-.a-input-inline input[type='text']:focus {
+.a-input-inline input[type='text']:focus,
+.a-input-inline input[type='tel']:focus,
+.a-input-inline input[type='email']:focus {
   all: unset;
   outline: none;
-  border: none;
-  font-family: var(--type-body-font) !important;
-}
-
-/*-----------------------------------ALL SECTION*/
-
-.a-inline {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.a-h1 {
-  font-family: var(--type-body-font);
-  font-size: 15vw;
-  color: #ffffff;
-  margin: 0;
-}
-.a-h2 {
-  font-size: 7vw;
-  color: #ffffff;
-  margin: 0;
-}
-.a-h3 {
-  color: #ffffff;
-  font-family: Helvetica, sans-serif;
-  font-size: 1.8vw;
-  padding: 6vw 0vw;
-  margin: 0vw;
-}
-.a-h4 {
-  font-size: 1.8vw;
-  color: #ffffff;
-  margin: 2vw 2vw 2vw 0vw;
-  font-family: var(--type-body-font);
-  text-align: right;
-}
-
-.a-responsive-svg {
-  display: flex;
-  fill: #ffffff;
-  width: 10vw;
-  height: 6vw;
-}
-.a-p {
-  color: #ffffff;
-  margin: 0;
-  font-size: 1.6vw;
-  font-family: Helvetica, sans-serif;
-}
-.a-a {
-  color: #ffffff;
-  margin: 0;
+  margin-left: 1vw;
+  width: 26vw;
+  height: 3vw;
+  background-color: #000;
+  border-bottom: 0vw solid #fff;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  color: #fff;
   font-size: 2vw;
+  font-family: Georgia, 'Times New Roman', Times, serif !important;
+  font-style: italic;
+  text-align: center;
+  overflow: visible;
+}
+.a-quel-service {
+  width: 100%;
+}
+.a-radio-container {
+  display: flex;
+  justify-content: center;
+  gap: 3vw;
+  margin: 2vw 0vw;
+}
+.a-radio span {
+  content: '';
+  color: #ffffff;
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.5vw;
   font-style: italic;
   border: 2px solid #fff;
   padding: 0px 12px;
   border-radius: 90px;
-  white-space: nowrap;
-}
-.a-a-helvetica {
-  font-family: Helvetica, sans-serif;
-  font-style: normal;
-}
-.a-line-3px {
-  border: none; /* Supprime la bordure par défaut */
-  height: 3px; /* Définit l'épaisseur de la ligne */
-  background-color: #ffffff; /* Couleur de la ligne */
-  width: 100%;
-  display: block !important;
-}
-.a-right {
   display: flex;
-  justify-content: right;
-  width: 100vw;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
 }
-
-/*-----------------------------------SVG STYLES*/
-
-.a-svg-cloud1 {
-  margin-right: 10vw;
+.a-radio input[type='radio'] {
+  display: none;
 }
-.a-svg-cloud2 {
-  margin-left: 15vw;
+.a-radio input[type='radio']:checked + span {
+  background-color: #fff;
+  color: #000;
 }
-.a-div-svg-shop {
-  margin-left: auto;
-  margin-right: 10%;
+.a-form-textarea {
+  width: 100%;
 }
-.a-svg-left-angle {
-  width: 5vw;
-  height: 3vw;
+.a-form-textarea textarea {
+  all: unset;
+  background-color: #000;
+  border: 0.1vw solid #fff;
+  width: 100%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.5vw;
+  font-style: italic;
+  padding: 1vw;
+  box-sizing: border-box;
 }
-.a-svg-arrow-from-line-right {
-  width: 5vw;
-  height: 4vw;
+.a-submit {
+  content: '';
+  color: #000;
+  background-color: #fff;
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 3vw;
+  font-style: italic;
+  border: 2px solid #fff;
+  padding: 2px 12px;
+  border-radius: 90px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
 }
-.a-svg-logo-ploceus {
-  width: 11vw;
-  height: 6vw;
+.a-submit:hover {
+  background-color: #000;
+  color: #fff;
+}
+.a-form-bottom {
+  margin: 5vw 10vw 10vw;
 }

@@ -1,37 +1,73 @@
 <div class="A-Form">
-  <h2 class="a-h2 a-h2-formsection">Commençons à travailler</h2>
-  <h2 class="a-h2 a-right a-h2-formsection">ensemble</h2>
-  <form class="a-form-wrap a-label-text a-input-inline">
+  <h2 class="a-h2 a-h2-formsection">Commençons à</h2>
+  <h2 class="a-h2 a-right a-h2-formsection">travailler ensemble</h2>
+  <form
+    class="a-form-wrap a-label-text a-input-inline"
+    action="https://script.google.com/macros/s/AKfycbznvOP-u8Uo8qRAmKITJ6SuDNuXyIyNbW5MUv3peKe8Z-dPHKhJa4BWOF2g9NQ2UOco/exec"
+    method="post"
+  >
     <span>
-      <label for="a-name">Je suis<input type="text" id="a-name"></label>
-      <label for="a-entreprise">de l'entreprise<input type="text" id="a-entreprise"></label>
+      <label for="a-name">
+        Je suis
+        <input type="text" id="a-name" placeholder="Nom & Prénom" required>
+      </label>
+      <label for="a-entreprise">
+        de l'entreprise
+        <input type="text" id="a-entreprise" placeholder="entreprise" required>
+      </label>
       <label>.</label>
-      <label for="a-tel">Vous pouvez me joindre au numéro<input type="tel" id="a-tel"></label>
-      <label for="a-email">et mon email est <input type="email" id="a-email"></label>
-      <label>.</label></span
-    >
-    <label for="a-quel-service"
-      >Et si je vous contact aujourd’hui c’est car je souhaite :
-      <label><input type="radio" name="a-quel-service" value="a-radio-create">Créer une boutique</label>
-      <label><input type="radio" name="a-quel-service" value="a-radio-remake">Refaire ma boutique</label>
-      <label
-        ><input type="radio" name="a-quel-service" value="a-radio-integrate">Intégrer des outils à ma boutique</label
-      >
-      <label><input type="radio" name="a-quel-service" value="a-autre">Autre</label>
-      <label for="a-message">Pour tout vous dire, <textarea id="a-message" name="message"></textarea></label>
+      <label for="a-tel">
+        Vous pouvez me joindre au numéro
+        <input type="tel" id="a-tel" placeholder="téléphone" required>
+      </label>
+      <label for="a-email">
+        et mon email est
+        <input type="email" id="a-email" placeholder="email" required>
+      </label>
+      <label>.</label>
+    </span>
+
+    <label class="a-quel-service" for="a-quel-service">
+      Si je vous contact aujourd’hui c’est car je souhaite :
+      <br>
+      <div class="a-radio-container">
+        <label class="a-radio">
+          <input type="radio" name="a-quel-service" value="a-radio-create" required>
+          <span>Créer une boutique.</span>
+        </label>
+        <label class="a-radio">
+          <input type="radio" name="a-quel-service" value="a-radio-remake" required>
+          <span>Refaire ma boutique.</span>
+        </label>
+        <label class="a-radio">
+          <input type="radio" name="a-quel-service" value="a-radio-integrate" required>
+          <span>Intégrer des outils à ma boutique*.</span>
+        </label>
+        <label class="a-radio">
+          <input type="radio" name="a-quel-service" value="a-autre" required>
+          <span>Autre.</span>
+        </label>
+      </div>
     </label>
+    <label class="a-form-textarea" for="a-message">
+      Pour tout vous dire,
+      <br>
+      <textarea id="a-message" name="message" placeholder="Votre message"></textarea>
+    </label>
+    <input class="a-submit" type="submit" placeholder="envoyer">
   </form>
 
-  <div class="a-header-bottom">
+  <div class="a-header-bottom a-form-bottom">
     <svg class="a-responsive-svg a-svg-logo-ploceus">
       <use xlink:href="#a-svg-logo-ploceus"></use>
     </svg>
-    <a class="a-inline" link="mailto=tino@ploceus.fr">
+    <a class="a-inline" href="mailto:tino@ploceus.fr">
       <p class="a-a a-a-helvetica">Vous préférez nous écrire ?</p>
       <p class="a-a">tino@ploceus.fr</p>
     </a>
   </div>
 </div>
+
 {% schema %}
 {
   "name": "A-Form",
