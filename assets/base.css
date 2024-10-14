@@ -3668,7 +3668,6 @@ details-disclosure > details {
 .a-right {
   display: flex;
   justify-content: right;
-  width: 100vw;
 }
 
 /*-----------------------------------SVG STYLES*/
@@ -3820,19 +3819,32 @@ details-disclosure > details {
   padding: 1vw;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
 }
 .a-h2-formsection {
   font-family: var(--type-body-font);
   font-size: 6vw !important;
-  margin: 0vw 10vw;
+  margin: 0vw 9vw;
+}
+.a-form-h2-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
 }
 .a-form-wrap {
   display: flex;
   flex-wrap: wrap;
   margin: 5vw 0vw;
+  width: 80vw;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  padding: 2vw;
+  background-color: #fff;
 }
 .a-label-text {
-  color: #fff;
+  color: #000;
   font-size: 2vw;
   margin-bottom: 1vw;
   font-family: Helvetica, sans-serif;
@@ -3842,14 +3854,14 @@ details-disclosure > details {
 .a-input-inline input[type='email'] {
   all: unset;
   margin-left: 2vw;
-  width: 25vw;
+  width: 20vw;
   height: 3vw;
-  background-color: #000;
-  border-bottom: 0.1vw solid #fff;
+  background-color: #fff;
+  border-bottom: 0.1vw solid #000;
   border-left: none;
   border-right: none;
   border-top: none;
-  color: #fff;
+  color: #000;
   font-size: 2vw;
   font-family: Georgia, 'Times New Roman', Times, serif !important;
   font-style: italic;
@@ -3862,14 +3874,14 @@ details-disclosure > details {
   all: unset;
   outline: none;
   margin-left: 1vw;
-  width: 26vw;
+  width: 21vw;
   height: 3vw;
-  background-color: #000;
-  border-bottom: 0vw solid #fff;
+  background-color: #fff;
+  border-bottom: 0vw solid #000;
   border-left: none;
   border-right: none;
   border-top: none;
-  color: #fff;
+  color: #000;
   font-size: 2vw;
   font-family: Georgia, 'Times New Roman', Times, serif !important;
   font-style: italic;
@@ -3887,12 +3899,12 @@ details-disclosure > details {
 }
 .a-radio span {
   content: '';
-  color: #ffffff;
+  color: #000;
   margin: 0;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 1.5vw;
   font-style: italic;
-  border: 2px solid #fff;
+  border: 2px solid #000;
   padding: 0px 12px;
   border-radius: 90px;
   display: flex;
@@ -3904,16 +3916,17 @@ details-disclosure > details {
   display: none;
 }
 .a-radio input[type='radio']:checked + span {
-  background-color: #fff;
-  color: #000;
+  background-color: #000;
+  color: #fff;
 }
 .a-form-textarea {
   width: 100%;
 }
 .a-form-textarea textarea {
   all: unset;
-  background-color: #000;
-  border: 0.1vw solid #fff;
+  background-color: #fff;
+  border: 0.1vw solid #000;
+  border-radius: 1.5vw;
   width: 100%;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 1.5vw;
@@ -3923,13 +3936,13 @@ details-disclosure > details {
 }
 .a-submit {
   content: '';
-  color: #000;
-  background-color: #fff;
+  color: #fff;
+  background-color: #000;
   margin: 0;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 3vw;
+  font-size: 2.5vw;
   font-style: italic;
-  border: 2px solid #fff;
+  border: 2px solid #000;
   padding: 2px 12px;
   border-radius: 90px;
   display: flex;
@@ -3938,9 +3951,39 @@ details-disclosure > details {
   transition: background-color 0.3s, color 0.3s;
 }
 .a-submit:hover {
-  background-color: #000;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
 }
 .a-form-bottom {
   margin: 5vw 10vw 10vw;
+}
+.popup {
+  visibility: hidden;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border: 0.2vw solid #000;
+  border-radius: 1.5vw;
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+  font-size: 3vw;
+  color: #000;
+}
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 20px;
+  cursor: pointer;
 }

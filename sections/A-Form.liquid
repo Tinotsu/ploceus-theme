@@ -1,50 +1,53 @@
 <div class="A-Form">
-  <h2 class="a-h2 a-h2-formsection">Commençons à</h2>
-  <h2 class="a-h2 a-right a-h2-formsection">travailler ensemble</h2>
+  <div class="a-form-h2-container">
+    <h2 class="a-h2 a-h2-formsection">Commençons à</h2>
+    <h2 class="a-h2 a-right a-h2-formsection">travailler ensemble</h2>
+  </div>
   <form
     class="a-form-wrap a-label-text a-input-inline"
-    action="https://script.google.com/macros/s/AKfycbznvOP-u8Uo8qRAmKITJ6SuDNuXyIyNbW5MUv3peKe8Z-dPHKhJa4BWOF2g9NQ2UOco/exec"
+    id="contactForm"
+    action="https://script.google.com/macros/s/AKfycbycQUG9Vu3WmZY46b2kLYwODyY9dCiMVjIzwPOgncmt9OqnL7LI4JGgHasw7fhoMRwJ/exec"
     method="post"
   >
     <span>
       <label for="a-name">
         Je suis
-        <input type="text" id="a-name" placeholder="Nom & Prénom" required>
+        <input type="text" name="nom" id="a-name" placeholder="Nom & Prénom" required>
       </label>
       <label for="a-entreprise">
         de l'entreprise
-        <input type="text" id="a-entreprise" placeholder="entreprise" required>
+        <input type="text" name="entreprise" id="a-entreprise" placeholder="entreprise" required>
       </label>
-      <label>.</label>
+      <label>.</label><br>
       <label for="a-tel">
         Vous pouvez me joindre au numéro
-        <input type="tel" id="a-tel" placeholder="téléphone" required>
+        <input type="tel" name="tel" id="a-tel" placeholder="téléphone" required>
       </label>
       <label for="a-email">
         et mon email est
-        <input type="email" id="a-email" placeholder="email" required>
+        <input type="email" name="email" id="a-email" placeholder="email" required>
       </label>
       <label>.</label>
     </span>
 
-    <label class="a-quel-service" for="a-quel-service">
+    <label class="a-quel-service" name="service" for="a-quel-service">
       Si je vous contact aujourd’hui c’est car je souhaite :
       <br>
       <div class="a-radio-container">
         <label class="a-radio">
-          <input type="radio" name="a-quel-service" value="a-radio-create" required>
+          <input type="radio" name="service" value="Créer une boutique" required>
           <span>Créer une boutique.</span>
         </label>
         <label class="a-radio">
-          <input type="radio" name="a-quel-service" value="a-radio-remake" required>
+          <input type="radio" name="service" value="Refaire ma boutique" required>
           <span>Refaire ma boutique.</span>
         </label>
         <label class="a-radio">
-          <input type="radio" name="a-quel-service" value="a-radio-integrate" required>
+          <input type="radio" name="service" value="Intégrer des outils" required>
           <span>Intégrer des outils à ma boutique*.</span>
         </label>
         <label class="a-radio">
-          <input type="radio" name="a-quel-service" value="a-autre" required>
+          <input type="radio" name="service" value="Autre" required>
           <span>Autre.</span>
         </label>
       </div>
@@ -68,6 +71,83 @@
   </div>
 </div>
 
+<section id="successPopup" class="popup">
+  <section class="popup-content">
+    <span class="close">&times;</span>
+    <p>Votre message a bien été envoyé !</p>
+  </section>
+</section>
+
+<section id="errorPopup" class="popup">
+  <section class="popup-content">
+    <span class="close">&times;</span>
+    <p>Une erreur est survenue lors de l'envoi.</p>
+  </section>
+</section>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Empêche le rechargement de la page
+
+    const formData = new FormData(this);
+    const submitButton = this.querySelector('input[type="submit"]');
+
+    // Désactiver le bouton pendant l'envoi
+    submitButton.disabled = true;
+    submitButton.value = 'Envoi en cours...';
+
+    fetch(this.action, {
+      method: 'POST',
+      body: formData,
+    })
+      .then((response) => {
+        if (response.ok) {
+          // Afficher la popup de succès avec visibility: visible
+          document.getElementById('successPopup').style.visibility = 'visible';
+          document.getElementById('successPopup').style.opacity = 1; // Pour une transition fluide
+          document.getElementById('errorPopup').style.visibility = 'hidden';
+          document.getElementById('errorPopup').style.opacity = 0;
+        } else {
+          throw new Error("Erreur lors de l'envoi du formulaire");
+        }
+      })
+      .catch((error) => {
+        console.error('Erreur:', error);
+        // Afficher la popup d'erreur avec visibility: visible
+        document.getElementById('errorPopup').style.visibility = 'visible';
+        document.getElementById('errorPopup').style.opacity = 1;
+        document.getElementById('successPopup').style.visibility = 'hidden';
+        document.getElementById('successPopup').style.opacity = 0;
+      })
+      .finally(() => {
+        // Réactiver le bouton après l'envoi
+        submitButton.disabled = false;
+        submitButton.value = 'Envoyer';
+      });
+  });
+
+  // Fermer la popup quand l'utilisateur clique sur "x" ou en dehors de la popup
+  document.querySelectorAll('.close').forEach(function (closeButton) {
+    closeButton.addEventListener('click', function () {
+      const popup = this.closest('.popup');
+      popup.style.visibility = 'hidden';
+      popup.style.opacity = 0;
+    });
+  });
+
+  window.addEventListener('click', function (event) {
+    const successPopup = document.getElementById('successPopup');
+    const errorPopup = document.getElementById('errorPopup');
+    if (event.target === successPopup) {
+      successPopup.style.visibility = 'hidden';
+      successPopup.style.opacity = 0;
+    }
+    if (event.target === errorPopup) {
+      errorPopup.style.visibility = 'hidden';
+      errorPopup.style.opacity = 0;
+    }
+  });
+</script>
 {% schema %}
 {
   "name": "A-Form",

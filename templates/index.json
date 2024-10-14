@@ -68,17 +68,10 @@
             "logo_image": "shopify://shop_images/1024px-Joseph_Noel_Paton_-_Puck_and_Fairies__from__A_Midsummer_Night_s_Dream__-_Google_Art_Project.jpg"
           }
         },
-        "slide3": {
-          "type": "slide",
-          "settings": {
-            "logo_image": "shopify://shop_images/png-clipart-tesla-logo-transport-cars-thumbnail.png"
-          }
-        }
       },
       "block_order": [
         "slide1",
         "slide2",
-        "slide3"
       ],
       "settings": {
       }
