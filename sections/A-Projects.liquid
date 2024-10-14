@@ -13,7 +13,10 @@
           onclick="expand(this)"
           style="background-image: url({{ block.settings.slide_image | img_url: '2048x2048' }}); background-size: cover;"
         >
-          {{ block.settings.slide_text }}
+          <div class="a-projectslide-description">
+            <div class="a-projectslide-title">{{ block.settings.slide_text }}</div>
+            <a class="a-projectslide-link a-a a-projectslide-a" href="{{ block.settings.slide_url }}">Voir le site</a>
+          </div>
         </div>
       {% endfor %}
     </div>
@@ -30,23 +33,33 @@
         width: '70vw',
         duration: 1,
       });
+      firstSlide.querySelector('.a-projectslide-description').style.visibility = 'visible';
+      firstSlide.querySelector('.a-projectslide-description').style.opacity = 1;
     }
 
     const expand = (slide, i) => {
       // Réduire toutes les autres slides
       slides.forEach((it, ind) => {
+        const description = it.querySelector('.a-projectslide-description');
         if (i !== ind) {
           gsap.to(it, {
             width: '16vw',
             duration: 1,
           });
+          // Masquer la description des autres slides
+          description.style.visibility = 'hidden';
+          description.style.opacity = 0;
         }
       });
 
+      // Agrandir la slide cliquée et afficher la description
       gsap.to(slide, {
         width: '70vw',
         duration: 1,
       });
+      const description = slide.querySelector('.a-projectslide-description');
+      description.style.visibility = 'visible';
+      description.style.opacity = 1;
     };
 
     slides.forEach((slide, i) => {
@@ -68,6 +81,11 @@
           "type": "text",
           "id": "slide_text",
           "label": "Slide Text"
+        },
+        {
+          "type": "text",
+          "id": "slide_url",
+          "label": "Slide Url"
         },
         {
           "type": "image_picker",

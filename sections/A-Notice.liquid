@@ -1,7 +1,9 @@
 <div class="A-Notice">
   <h3 class="a-h3">Pourquoi nous faire confiance ? Demandez-leur.</h3>
-  <h2 class="a-h2 a-right">Notre objectif,</h2>
-  <h2 class="a-h2" style="margin: -2vw 0vw;">Avoir ce genre</h2>
+  <div class="a-h2-container">
+    <h2 class="a-h2 a-right">Notre objectif,</h2>
+    <h2 class="a-h2" style="margin: -2vw 0vw;">Avoir ce genre</h2>
+  </div>
   <div class="a-header-bottom">
     <p class="a-a a-margin-top">Ce qu’on pense de nous</p>
     <h2 class="a-h2">de retour :</h2>
@@ -15,17 +17,25 @@
       {% for block in section.blocks %}
         <div
           class="a-slidecard"
-          data-image-url="{{ block.settings.logo_image | img_url: '2048x2048' }}; "
+          data-image-url="{{ block.settings.logo_image | img_url: '2048x2048' }}"
         >
-          card {{ forloop.index }}
+          <div
+            class="a-slidecard-clientimage"
+            style="background-image: url({{ block.settings.client_image | img_url: '2048x2048' }});"
+          >
+            '
+          </div>
+          <div class="a-slidecard-client">
+            <div class="a-slidecard-clientname">{{ block.settings.client_name }}</div>
+            <div class="a-slidecard-clientnotice">"{{ block.settings.client_notice }}"</div>
+          </div>
         </div>
       {% endfor %}
     </div>
     <div
       class="a-slidecard-logo"
-      style="background-color:blue"
     >
-      logo
+      '
     </div>
   </div>
 </div>
@@ -91,6 +101,21 @@
           "type": "image_picker",
           "id": "logo_image",
           "label": "Slidecard Logo"
+        },
+        {
+          "type": "image_picker",
+          "id": "client_image",
+          "label": "Slidecard Client"
+        },
+        {
+          "type": "text",
+          "id": "client_name",
+          "label": "Client Name"
+        },
+        {
+          "type": "text",
+          "id": "client_notice",
+          "label": "Client Notice"
         }
       ]
     }

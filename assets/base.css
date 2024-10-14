@@ -3631,7 +3631,12 @@ details-disclosure > details {
   font-family: var(--type-body-font);
   text-align: right;
 }
-
+.a-h2-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
 .a-responsive-svg {
   display: flex;
   fill: #ffffff;
@@ -3649,10 +3654,11 @@ details-disclosure > details {
   margin: 0;
   font-size: 2vw;
   font-style: italic;
-  border: 2px solid #fff;
-  padding: 0px 12px;
+  border: 0.15vw solid #fff;
+  padding: 0px 1vw;
   border-radius: 90px;
   white-space: nowrap;
+  text-decoration: none;
 }
 .a-a-helvetica {
   font-family: Helvetica, sans-serif;
@@ -3762,6 +3768,31 @@ details-disclosure > details {
   display: inline-block;
   cursor: pointer;
 }
+.a-projectslide-description {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  height: 100%;
+  padding-left: 1vw;
+  margin-left: 60%;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 0 1.5vw 1.5vw 0;
+  gap: 2vw;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s ease;
+}
+.a-projectslide-title {
+  color: #000;
+  font-size: 2vw;
+  font-family: Helvetica, sans-serif;
+}
+.a-projectslide-a {
+  color: #000;
+  font-size: 1.5vw;
+  border: 0.15vw solid #000;
+}
 
 /*-----------------------------------NOTICE SECTION*/
 
@@ -3782,7 +3813,7 @@ details-disclosure > details {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #070707;
+  background-color: #000000;
   margin: 20vw 0vw;
   width: 100%;
   padding-bottom: 50vh;
@@ -3795,21 +3826,51 @@ details-disclosure > details {
 .a-slidecard {
   position: relative;
   inset: 0%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
   z-index: auto;
   width: 60vw;
-  height: 80vh;
+  height: 60vh;
   border-radius: 1.5vw;
-  border: 2px solid #f00;
-  padding: 10px;
-  color: aqua;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+  background-size: cover;
+}
+.a-slidecard-clientimage {
+  width: 50%;
+  height: 90%;
+  border-radius: 1.5vw;
+  margin: 1.5vw;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+}
+.a-slidecard-client {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 90%;
+  gap: 2vw;
+  justify-content: center;
+}
+.a-slidecard-clientname {
+  font-size: 1.5vw;
+  font-style: italic;
+  color: #000;
+}
+.a-slidecard-clientnotice {
+  font-size: 2.5vw;
+  font-family: Helvetica, sans-serif;
+  color: #000;
+  line-height: 1.2;
 }
 .a-slidecard-logo {
   position: relative;
   height: 15vw;
   width: 15vw;
-  border: 2px solid #f00;
-  border-radius: 100%;
   overflow: hidden;
+  background: no-repeat;
+  background-size: contain;
 }
 
 /*-----------------------------------FORM SECTION*/
@@ -3826,12 +3887,6 @@ details-disclosure > details {
   font-family: var(--type-body-font);
   font-size: 6vw !important;
   margin: 0vw 9vw;
-}
-.a-form-h2-container {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  justify-content: center;
 }
 .a-form-wrap {
   display: flex;
