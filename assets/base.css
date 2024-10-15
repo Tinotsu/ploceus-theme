@@ -3858,7 +3858,7 @@ details-disclosure > details {
 .a-notice-card-left {
   display: flex;
   flex-direction: column;
-  gap: 20vh;
+  gap: 10vh;
 }
 .a-slidecard {
   position: relative;
@@ -3908,6 +3908,11 @@ details-disclosure > details {
   overflow: hidden;
   background: no-repeat;
   background-size: contain;
+}
+@media (max-width: 900px) {
+  .a-slidecard-logo {
+    display: none;
+  }
 }
 
 /*-----------------------------------FORM SECTION*/
