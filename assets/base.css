@@ -3682,6 +3682,15 @@ details-disclosure > details {
   justify-content: right;
 }
 @media (max-width: 900px) {
+  .a-h2 {
+    font-size: 10vw;
+  }
+  .a-h3 {
+    font-size: 3vw;
+  }
+  .a-h4 {
+    display: none;
+  }
   .a-only-desktop {
     display: none !important;
   }
