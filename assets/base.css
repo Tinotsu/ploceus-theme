@@ -3756,6 +3756,12 @@ details-disclosure > details {
   width: 100%;
   justify-content: space-between;
 }
+.a-h3-header {
+  color: #ffffff;
+  font-family: Helvetica, sans-serif;
+  font-size: 3vw;
+  display: none;
+}
 @media (max-width: 900px) {
   .A-Header {
     height: 60vh;
@@ -3763,6 +3769,9 @@ details-disclosure > details {
   .a-header-line {
     width: 90vw;
   }
+}
+.a-h3-header {
+  display: flex;
 }
 /*-----------------------------------PARAGRAPH SECTION*/
 
