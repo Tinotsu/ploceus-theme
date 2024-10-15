@@ -3880,13 +3880,14 @@ details-disclosure > details {
   margin: 1.5vw;
   background-position: center;
   background-size: cover;
-  color: #fff;
+  color: #000000;
 }
 .a-slidecard-client {
   display: flex;
   flex-direction: column;
   width: 50%;
   height: 90%;
+  margin-right: 1vw;
   gap: 2vw;
   justify-content: center;
 }
@@ -3912,6 +3913,9 @@ details-disclosure > details {
 @media (max-width: 900px) {
   .a-slidecard-logo {
     display: none;
+  }
+  .a-slidecard {
+    width: 80vw;
   }
 }
 
