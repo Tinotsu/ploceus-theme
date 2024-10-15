@@ -3599,20 +3599,12 @@ details-disclosure > details {
 /*---------------------------------------------------------------THEME CUSTOM----------------------------------------------------------*/
 
 /*-----------------------------------ALL SECTION*/
+
 .a-only-desktop {
   display: contents;
 }
 .a-totheline-phone {
   display: none;
-}
-@media (max-width: 900px) {
-  .a-only-desktop {
-    display: none;
-  }
-  .a-totheline-phone {
-    display: block;
-    height: 0;
-  }
 }
 .a-inline {
   display: flex;
@@ -3689,6 +3681,18 @@ details-disclosure > details {
   display: flex;
   justify-content: right;
 }
+@media (max-width: 900px) {
+  .a-only-desktop {
+    display: none !important;
+  }
+  .a-totheline-phone {
+    display: block;
+    height: 0;
+  }
+  .a-a {
+    font-size: 3vw;
+  }
+}
 
 /*-----------------------------------SVG STYLES*/
 
@@ -3727,11 +3731,6 @@ details-disclosure > details {
   align-items: center;
   justify-content: center;
 }
-@media (max-width: 900px) {
-  .A-Header {
-    height: 60vh;
-  }
-}
 .a-header-line {
   display: flex;
   width: 80vw;
@@ -3748,7 +3747,14 @@ details-disclosure > details {
   width: 100%;
   justify-content: space-between;
 }
-
+@media (max-width: 900px) {
+  .A-Header {
+    height: 60vh;
+  }
+  .a-header-line {
+    width: 90vw;
+  }
+}
 /*-----------------------------------PARAGRAPH SECTION*/
 
 .A-Paragraph {
@@ -3761,7 +3767,11 @@ details-disclosure > details {
   font-size: 3vw;
   padding: 0vw 0vw 6vw 0vw;
 }
-
+@media (max-width: 900px) {
+  .A-Paragraph {
+    padding: 12vw 5vw;
+  }
+}
 /*---------------------------------PROJECTS SECTION*/
 
 .A-Projects {
@@ -3813,6 +3823,9 @@ details-disclosure > details {
   border: 0.15vw solid #000;
 }
 @media (max-width: 900px) {
+  .A-Projects {
+    padding: 12vw 5vw;
+  }
   .slide {
     height: 70vh;
     align-self: flex-end;
@@ -3835,7 +3848,7 @@ details-disclosure > details {
 
 .A-Notice {
   background-color: #000000;
-  padding: 0vw 10vw 0vw 10vw;
+  padding: 0vw 10vw;
   display: flex;
   flex-wrap: wrap;
 }
@@ -3911,6 +3924,9 @@ details-disclosure > details {
   background-size: contain;
 }
 @media (max-width: 900px) {
+  .A-Notice {
+    padding: 0vw 5vw;
+  }
   .a-slidecard-logo {
     display: none;
   }
@@ -4090,6 +4106,9 @@ details-disclosure > details {
   cursor: pointer;
 }
 @media (max-width: 900px) {
+  .a-form-wrap {
+    width: 90vw;
+  }
   .a-input-inline input[type='text'],
   .a-input-inline input[type='tel'],
   .a-input-inline input[type='email'],
