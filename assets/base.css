@@ -3769,9 +3769,9 @@ details-disclosure > details {
   .a-header-line {
     width: 90vw;
   }
-}
-.a-h3-header {
-  display: flex;
+  .a-h3-header {
+    display: flex;
+  }
 }
 /*-----------------------------------PARAGRAPH SECTION*/
 
