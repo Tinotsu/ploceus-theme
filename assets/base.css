@@ -3916,6 +3916,7 @@ details-disclosure > details {
   }
   .a-slidecard {
     width: 80vw;
+    height: 40vh;
   }
 }
 
