@@ -4140,4 +4140,7 @@ details-disclosure > details {
   .a-radio-container {
     flex-direction: column;
   }
+  .a-h2-formsection {
+    font-size: 8vw !important;
+  }
 }
