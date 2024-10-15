@@ -3713,6 +3713,11 @@ details-disclosure > details {
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 900px) {
+  .A-Header {
+    height: 60vh;
+  }
+}
 .a-header-line {
   display: flex;
   width: 80vw;
@@ -3756,6 +3761,7 @@ details-disclosure > details {
 }
 .a-carousel {
   display: flex;
+  gap: 2vw;
 }
 .slide {
   width: 16vw;
@@ -3763,7 +3769,6 @@ details-disclosure > details {
   background-position: center;
   background-color: #fff;
   background-size: 75vh;
-  margin: 1vw;
   border-radius: 1.5vw;
   display: inline-block;
   cursor: pointer;
@@ -3792,6 +3797,24 @@ details-disclosure > details {
   color: #000;
   font-size: 1.5vw;
   border: 0.15vw solid #000;
+}
+@media (max-width: 900px) {
+  .slide {
+    height: 70vh;
+    align-self: flex-end;
+    margin: 0;
+  }
+  .a-projectslide-description {
+    width: 50%;
+    margin-left: 0%;
+    border-radius: 1.5vw 0vw 0vw 1.5vw;
+  }
+  .a-projectslide-title {
+    font-size: 3vw;
+  }
+  .a-projectslide-a {
+    font-size: 2vw;
+  }
 }
 
 /*-----------------------------------NOTICE SECTION*/
@@ -3894,7 +3917,7 @@ details-disclosure > details {
   margin: 5vw 0vw;
   width: 80vw;
   border: 2px solid #fff;
-  border-radius: 30px;
+  border-radius: 1.5vw;
   padding: 2vw;
   background-color: #fff;
 }
