@@ -3599,7 +3599,21 @@ details-disclosure > details {
 /*---------------------------------------------------------------THEME CUSTOM----------------------------------------------------------*/
 
 /*-----------------------------------ALL SECTION*/
-
+.a-only-desktop {
+  display: contents;
+}
+.a-totheline-phone {
+  display: none;
+}
+@media (max-width: 900px) {
+  .a-only-desktop {
+    display: none;
+  }
+  .a-totheline-phone {
+    display: block;
+    height: 0;
+  }
+}
 .a-inline {
   display: flex;
   flex-direction: row;
@@ -4064,4 +4078,28 @@ details-disclosure > details {
   right: 20px;
   font-size: 20px;
   cursor: pointer;
+}
+@media (max-width: 900px) {
+  .a-input-inline input[type='text'],
+  .a-input-inline input[type='tel'],
+  .a-input-inline input[type='email'],
+  .a-input-inline input[type='text']:focus,
+  .a-input-inline input[type='tel']:focus,
+  .a-input-inline input[type='email']:focus,
+  .a-radio span,
+  .a-form-textarea textarea {
+    font-size: 2.5vw;
+  }
+  .a-radio span {
+    width: 60vw;
+    justify-content: flex-start;
+    padding-left: 5vw;
+  }
+  .a-label-text,
+  .a-submit {
+    font-size: 4vw;
+  }
+  .a-radio-container {
+    flex-direction: column;
+  }
 }
