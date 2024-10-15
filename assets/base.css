@@ -3864,9 +3864,9 @@ details-disclosure > details {
   flex-direction: row;
   justify-content: space-between;
   background-color: #000000;
-  margin: 20vw 0vw;
+  margin: 20vw 0vw 0vw;
   width: 100%;
-  padding-bottom: 50vh;
+  padding-bottom: 30vh;
 }
 .a-notice-card-left {
   display: flex;
