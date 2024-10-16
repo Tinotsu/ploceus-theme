@@ -13,18 +13,6 @@
   "sections": {
     "footer": {
       "type": "footer",
-      "blocks": {
-        "footer-1": {
-          "type": "link_list",
-          "settings": {
-            "heading": "ploceus.fr",
-            "menu": ""
-          }
-        }
-      },
-      "block_order": [
-        "footer-1"
-      ],
       "settings": {
         "color_scheme": "scheme-1",
         "newsletter_enable": false,
