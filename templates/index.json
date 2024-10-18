@@ -7,15 +7,6 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "A-Header": {
@@ -66,7 +57,7 @@
             "logo_image": "shopify://shop_images/Logo_de_La_Ferme_a_Elise_en_dore.png",
             "client_image": "shopify://shop_images/Jerome_Pelloux.jpg",
             "client_name": "Jérôme, La Ferme à Élise",
-            "client_notice": "En ajustant line-height, tu peux contrôler précisément l'espacement entre les lignes de texte dans ton élément.",
+            "client_notice": "“Grâce au nouveau site créé pour La Ferme à Élise, nos réservations ont explosé. Une vraie transformation pour notre restaurant !”"
           }
         },
         "slide2": {
@@ -75,13 +66,13 @@
             "logo_image": "shopify://shop_images/savoie-salaisons-logo-produit-2019_2.png",
             "client_image": "shopify://shop_images/Portrait_Valerie_carre.webp",
             "client_name": "Valérie, Charcuterie Savoie",
-            "client_notice": "En ajustant line-height, tu peux contrôler précisément l'espacement entre les lignes de texte dans ton élément.",
+            "client_notice": "Depuis que notre boutique Shopify est en ligne, nos produits de salaison atteignent un public bien plus large. C’est une vraie réussite, merci pour ce superbe travail !"
           }
-        },
+        }
       },
       "block_order": [
         "slide1",
-        "slide2",
+        "slide2"
       ],
       "settings": {
       }
@@ -98,6 +89,5 @@
     "A-Projects",
     "A-Notice",
     "A-Form"
-
   ]
 }
