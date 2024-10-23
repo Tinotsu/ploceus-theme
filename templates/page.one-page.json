@@ -9,15 +9,13 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "main-page",
+    "A-One-page": {
+      "type": "A-One-page",
       "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
       }
     }
   },
   "order": [
-    "main"
+    "A-One-page"
   ]
 }
